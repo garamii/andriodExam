@@ -56,15 +56,11 @@ public class mission01Activity extends AppCompatActivity {
         // 상단 이미지 상태 변경
         if (mImageView1.getVisibility() == View.VISIBLE) {
             mImageView1.setVisibility(View.INVISIBLE);
+            mImageView2.setVisibility(View.VISIBLE);
         } else {
             mImageView1.setVisibility(View.VISIBLE);
+            mImageView2.setVisibility(View.INVISIBLE);
         }
 
-        // 하단 이미지 상태 변경
-        if (mImageView2.getVisibility() == View.VISIBLE) {
-            mImageView2.setVisibility(View.INVISIBLE);
-        } else {
-            mImageView2.setVisibility(View.VISIBLE);
-        }
     }
 }

@@ -25,6 +25,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.example.android.androidexam.layout.FrameLayoutActivity;
+import com.example.android.androidexam.mission.Mission02Activity;
 import com.example.android.androidexam.mission.mission01Activity;
 
 import java.text.Collator;
@@ -58,6 +59,7 @@ public class MainActivity extends ListActivity {
    //      addItem(myData, "TransitionDrawable", TransitionDrawableExamActivity.class);
          addItem(myData, "FrameLayout", FrameLayoutActivity.class);
          addItem(myData, "미션 01", mission01Activity.class);
+         addItem(myData, "미션 02", Mission02Activity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
