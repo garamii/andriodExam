@@ -34,14 +34,18 @@ public class FrameLayoutActivity extends AppCompatActivity {
 
     }
 
+
+
     public void changeImage() {
 
+        //이미지1
         if (mImageView1.getVisibility() == View.VISIBLE) {
             mImageView1.setVisibility(View.INVISIBLE);
         } else {
             mImageView1.setVisibility(View.VISIBLE);
         }
 
+        //이미지2
         if (mImageView2.getVisibility() == View.VISIBLE) {
             mImageView2.setVisibility(View.INVISIBLE);
         } else{
