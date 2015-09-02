@@ -38,13 +38,13 @@ public class FrameLayoutActivity extends AppCompatActivity {
 
         if (mImageView1.getVisibility() == View.VISIBLE) {
             mImageView1.setVisibility(View.INVISIBLE);
-        } else if (mImageView1.getVisibility() != View.VISIBLE) {
+        } else {
             mImageView1.setVisibility(View.VISIBLE);
         }
 
         if (mImageView2.getVisibility() == View.VISIBLE) {
             mImageView2.setVisibility(View.INVISIBLE);
-        } else if (mImageView2.getVisibility() != View.VISIBLE) {
+        } else{
             mImageView2.setVisibility(View.VISIBLE);
         }
 
