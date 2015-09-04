@@ -24,9 +24,11 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.example.android.androidexam.Activity.ActivityExamActivity;
 import com.example.android.androidexam.layout.FrameLayoutActivity;
 import com.example.android.androidexam.mission.Mission02Activity;
 import com.example.android.androidexam.mission.mission01Activity;
+import com.example.android.androidexam.mission.mission03Activity;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -60,6 +62,9 @@ public class MainActivity extends ListActivity {
          addItem(myData, "FrameLayout", FrameLayoutActivity.class);
          addItem(myData, "미션 01", mission01Activity.class);
          addItem(myData, "미션 02", Mission02Activity.class);
+         addItem(myData, "미션 03", mission03Activity.class);
+         addItem(myData, "화면이동예제", ActivityExamActivity.class);
+
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬

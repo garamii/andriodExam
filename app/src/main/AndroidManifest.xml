@@ -28,6 +28,22 @@
             android:name=".mission.Mission02Activity"
             android:label="@string/title_activity_mission02" >
         </activity>
+        <activity
+            android:name=".mission.mission03Activity"
+            android:label="@string/title_activity_mission03" >
+        </activity>
+        <activity
+            android:name=".mission.loginpage"
+            android:label="@string/title_activity_loginpage" >
+        </activity>
+        <activity
+            android:name=".Activity.ActivityExamActivity"
+            android:label="@string/title_activity_activity_exam" >
+        </activity>
+        <activity
+            android:name=".Activity.TargetActivity"
+            android:label="@string/title_activity_target" >
+        </activity>
     </application>
 
 </manifest>
