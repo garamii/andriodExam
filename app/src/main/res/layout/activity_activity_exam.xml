@@ -32,4 +32,9 @@
         android:layout_height="wrap_content"
         android:text="데이타를 실어서 Activity 호출"/>
 
+    <Button
+    android:id="@+id/btn2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="호출한 Activity가 종료  호출"/>
 </LinearLayout>
