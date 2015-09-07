@@ -55,14 +55,14 @@ public class loginpage extends AppCompatActivity {
             public void onClick(View v) {
 
                 title = ((TextView) findViewById(R.id.salesBtn)).getText().toString();
-                openDialog();
+
             }
         });
         findViewById(R.id.productsBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 title = ((TextView) findViewById(R.id.productsBtn)).getText().toString();
-                openDialog();
+
             }
         });
 
