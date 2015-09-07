@@ -20,6 +20,7 @@
         android:orientation="vertical">
 
     <EditText
+        android:hint="ID"
         android:id="@+id/idEdText"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
         android:background="@android:color/darker_gray" />
 
     <EditText
+        android:hint="PASSWARD"
         android:id="@+id/pswdEdText"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
