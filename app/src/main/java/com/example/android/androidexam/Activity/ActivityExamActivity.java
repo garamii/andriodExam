@@ -53,6 +53,7 @@ public class ActivityExamActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void openDialog() {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(ActivityExamActivity.this);
         builder.setTitle("타이틀");
         builder.setMessage("메세지");
@@ -61,12 +62,12 @@ public class ActivityExamActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(ActivityExamActivity.this, "확인 눌렸어요", Toast.LENGTH_SHORT).show();
+
             }
         });
         builder.setNegativeButton("닫기", null);
         builder.setIcon(R.mipmap.ic_launcher);
         builder.show();       // AlertDialog 를 최종 생성
-
     }
 
     private void btn2click() {

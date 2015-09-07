@@ -33,8 +33,10 @@ public class mission03Activity extends AppCompatActivity {
 
                 startActivity(intent);
 
-            }
+            }else {
                 Toast.makeText(getApplicationContext(), "로그인 정보가 잘못 되었습니다.", Toast.LENGTH_SHORT).show();
+            }
+
 
             }
         });

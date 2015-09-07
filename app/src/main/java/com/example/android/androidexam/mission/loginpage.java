@@ -1,13 +1,18 @@
 package com.example.android.androidexam.mission;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.androidexam.R;
 
 public class loginpage extends AppCompatActivity {
+
+    public String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,35 +40,51 @@ public class loginpage extends AppCompatActivity {
 //    }
 
 
+
+
     findViewById(R.id.cstmrBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                title = ((TextView) findViewById(R.id.cstmrBtn)).getText().toString();
+                openDialog();
 
-
-
-                Toast.makeText(getApplicationContext(), "고객 관리", Toast.LENGTH_SHORT).show();
-
-               finish();
             }
         });
         findViewById(R.id.salesBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(),"매출 관리",Toast.LENGTH_SHORT).show();
-                finish();
+                title = ((TextView) findViewById(R.id.salesBtn)).getText().toString();
+                openDialog();
             }
         });
         findViewById(R.id.productsBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"상품 관리",Toast.LENGTH_SHORT).show();
-                finish();
+                title = ((TextView) findViewById(R.id.productsBtn)).getText().toString();
+                openDialog();
             }
         });
 
     }
 
+    private void openDialog() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(loginpage.this);
+        builder.setTitle(title);
+        builder.setMessage("메세지");
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(loginpage.this, "확인 눌렸어요", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        builder.setNegativeButton("닫기", null);
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.show();       // AlertDialog 를 최종 생성
+    }
 
 
 }
