@@ -28,6 +28,7 @@ import com.example.android.androidexam.Activity.ActivityExamActivity;
 import com.example.android.androidexam.Activity.WebActivity;
 import com.example.android.androidexam.layout.FrameLayoutActivity;
 import com.example.android.androidexam.mission.Mission02Activity;
+import com.example.android.androidexam.mission.Mission05Activity;
 import com.example.android.androidexam.mission.mission01Activity;
 import com.example.android.androidexam.mission.mission03Activity;
 
@@ -66,6 +67,7 @@ public class MainActivity extends ListActivity {
          addItem(myData, "미션 03", mission03Activity.class);
          addItem(myData, "화면이동예제", ActivityExamActivity.class);
          addItem(myData, "웹뷰 예제", WebActivity.class);
+         addItem(myData, "미션 05", Mission05Activity.class);
 
         // ----- 메뉴 추가 여기까지
 
