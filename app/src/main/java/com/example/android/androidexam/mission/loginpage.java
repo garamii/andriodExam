@@ -5,17 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.androidexam.R;
 
-public class loginpage extends AppCompatActivity implements View.OnClickListener {
+public class loginpage extends AppCompatActivity {
 
     public String title;
-    public Button cstmrBtn;
-    public Button salesBtn;
-    public Button productsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +42,29 @@ public class loginpage extends AppCompatActivity implements View.OnClickListener
 
 
 
-        findViewById(R.id.cstmrBtn).setOnClickListener(this);
-        findViewById(R.id.salesBtn).setOnClickListener(this);
-        findViewById(R.id.productsBtn).setOnClickListener(this);
+    findViewById(R.id.cstmrBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                title = ((TextView) findViewById(R.id.cstmrBtn)).getText().toString();
+                openDialog();
+
+            }
+        });
+        findViewById(R.id.salesBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                title = ((TextView) findViewById(R.id.salesBtn)).getText().toString();
+
+            }
+        });
+        findViewById(R.id.productsBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                title = ((TextView) findViewById(R.id.productsBtn)).getText().toString();
+
+            }
+        });
 
     }
 
@@ -70,17 +87,4 @@ public class loginpage extends AppCompatActivity implements View.OnClickListener
     }
 
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.cstmrBtn:
-                break;
-            case R.id.salesBtn:
-                break;
-            case R.id.productsBtn:
-                break;
-
-        }
-
-    }
 }
