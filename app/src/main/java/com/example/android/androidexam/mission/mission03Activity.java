@@ -1,3 +1,4 @@
+
 package com.example.android.androidexam.mission;
 
 import android.content.Intent;
@@ -11,38 +12,34 @@ import com.example.android.androidexam.R;
 
 public class mission03Activity extends AppCompatActivity {
 
-   private EditText id;
-    private EditText password;
-
-
+    private EditText mId;
+    private EditText mPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mission03);
 
-        id = (EditText)findViewById(R.id.idEdText);
-        password = (EditText)findViewById(R.id.pswdEdText);
-
+        mId = (EditText) findViewById(R.id.idEdText);
+        mPassword = (EditText) findViewById(R.id.pswdEdText);
 
         findViewById(R.id.loginBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            if(id.getText().toString().equals("1111")&&password.getText().toString().equals("1111")){
-                Intent intent = new Intent(getApplicationContext(),loginpage.class);
+                if (mId.getText().toString().equals("1111")
+                        && mPassword.getText().toString().equals("1111")) {
+                    Intent intent = new Intent(getApplicationContext(), LoginPageActivity.class);
 
-                startActivity(intent);
+                    startActivity(intent);
 
-            }else {
-                Toast.makeText(getApplicationContext(), "로그인 정보가 잘못 되었습니다.", Toast.LENGTH_SHORT).show();
-            }
-
+                } else {
+                    Toast.makeText(getApplicationContext(), "로그인 정보가 잘못 되었습니다.", Toast.LENGTH_SHORT)
+                            .show();
+                }
 
             }
         });
 
     }
-
-
 
 }

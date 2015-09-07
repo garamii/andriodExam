@@ -33,7 +33,7 @@
             android:label="@string/title_activity_mission03" >
         </activity>
         <activity
-            android:name=".mission.loginpage"
+            android:name=".mission.LoginPageActivity"
             android:label="@string/title_activity_loginpage" >
         </activity>
         <activity

@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.android.androidexam.R;
 
-public class loginpage extends AppCompatActivity {
+public class LoginPageActivity extends AppCompatActivity {
 
     public String title;
 
@@ -40,44 +40,30 @@ public class loginpage extends AppCompatActivity {
 //    }
 
 
-
-
-    findViewById(R.id.cstmrBtn).setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                title = ((TextView) findViewById(R.id.cstmrBtn)).getText().toString();
+                title = ((Button) v).getText().toString();
                 openDialog();
-
             }
-        });
-        findViewById(R.id.salesBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        };
 
-                title = ((TextView) findViewById(R.id.salesBtn)).getText().toString();
-
-            }
-        });
-        findViewById(R.id.productsBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                title = ((TextView) findViewById(R.id.productsBtn)).getText().toString();
-
-            }
-        });
+        findViewById(R.id.cstmrBtn).setOnClickListener(onClickListener);
+        findViewById(R.id.salesBtn).setOnClickListener(onClickListener);
+        findViewById(R.id.productsBtn).setOnClickListener(onClickListener);
 
     }
 
     private void openDialog() {
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(loginpage.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginPageActivity.this);
         builder.setTitle(title);
         builder.setMessage("메세지");
         builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(loginpage.this, "확인 눌렸어요", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginPageActivity.this, "확인 눌렸어요", Toast.LENGTH_SHORT).show();
 
             }
         });
