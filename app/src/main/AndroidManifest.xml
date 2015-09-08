@@ -55,6 +55,11 @@
             android:name=".mission.Mission05Activity"
             android:label="@string/title_activity_mission05" >
         </activity>
+        <activity android:name=".animation.AnimationActivity" />
+        <activity
+            android:name=".calendar.CalendarActivity"
+            android:label="@string/title_activity_calendar" >
+        </activity>
     </application>
 
 </manifest>

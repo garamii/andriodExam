@@ -12,4 +12,5 @@
     <string name="title_activity_target">TargetActivity</string>
     <string name="title_activity_web">WebActivity</string>
     <string name="title_activity_mission05">Mission05Activity</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
 </resources>

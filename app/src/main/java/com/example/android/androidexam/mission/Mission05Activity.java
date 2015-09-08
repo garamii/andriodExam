@@ -56,10 +56,6 @@ public class Mission05Activity extends AppCompatActivity implements View.OnClick
             mDateBtn.setText(mDateInformation);
 
 
-//            Toast.makeText(getApplicationContext(), year + "년" + (monthOfYear + 1) + "월" + dayOfMonth
-//                    + "일", Toast.LENGTH_SHORT).show();
-
-
         }
     };
 
@@ -74,7 +70,7 @@ public class Mission05Activity extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             //날짜 버튼 클릭시 이벤트 처리
             case R.id.dateBtn:
-                DatePickerDialog dialog = new DatePickerDialog(this, listener, 2013, 10, 22);
+                DatePickerDialog dialog = new DatePickerDialog(this, listener, 2015, 9, 2);
                 dialog.show();
                 break;
 
