@@ -27,6 +27,8 @@ public class AnimationActivity extends Activity implements View.OnClickListener 
 
         setContentView(R.layout.activity_animation);
 
+
+
         mImageView = (ImageView) findViewById(R.id.aniImage);
         mBtnStart = (Button) findViewById(R.id.btnStart);
 

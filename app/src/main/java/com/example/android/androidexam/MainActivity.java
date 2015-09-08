@@ -27,6 +27,7 @@ import android.widget.SimpleAdapter;
 import com.example.android.androidexam.Activity.ActivityExamActivity;
 import com.example.android.androidexam.Activity.WebActivity;
 import com.example.android.androidexam.animation.AnimationActivity;
+import com.example.android.androidexam.calendar.CalendarActivity;
 import com.example.android.androidexam.layout.FrameLayoutActivity;
 import com.example.android.androidexam.mission.Mission02Activity;
 import com.example.android.androidexam.mission.Mission05Activity;
@@ -70,6 +71,7 @@ public class MainActivity extends ListActivity {
          addItem(myData, "웹뷰 예제", WebActivity.class);
          addItem(myData, "미션 05", Mission05Activity.class);
          addItem(myData, "animation 연습", AnimationActivity.class);
+         addItem(myData, "달력 연습", CalendarActivity.class);
 
         // ----- 메뉴 추가 여기까지
 
