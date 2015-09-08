@@ -39,12 +39,12 @@ public class CalendarAdapter extends BaseAdapter {
 
 
         int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH) + 1;
+        int month = calendar.get(Calendar.MONTH);
 
-        // 마지막 달
+        // 마지막 날
         int lastDay = calendar.getActualMaximum(Calendar.DATE);
 
-        // 이달의 첫 번째 날
+        // 이달의 첫 번째 날이 몇번째 부터 시작하는지
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         int firstDay = calendar.get(Calendar.DAY_OF_WEEK);
 
@@ -70,7 +70,7 @@ public class CalendarAdapter extends BaseAdapter {
 
 
     }
-    public Calendar getmCalendar(){
+    public Calendar getCalendar(){
         return mCalendar;
     }
 
@@ -127,12 +127,15 @@ public class CalendarAdapter extends BaseAdapter {
         Calendar calendar = mList.get(position);
         if (calendar != null) {
             //날짜 빼오기
+
             holder.dateTextView.setText("" + calendar.get(Calendar.DATE));
 
             if(position %7 == 0){
                 holder.dateTextView.setTextColor(Color.RED);
-            }else if(((position+6)+1) %7 == 0) {
+            }else if((position+1) %7 == 0) {
                 holder.dateTextView.setTextColor(Color.BLUE);
+            }else{
+                holder.dateTextView.setTextColor(Color.BLACK);
             }
         } else{
            holder.dateTextView.setText("");

@@ -51,8 +51,8 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void updateTitle() {
-        int year = mCalendarAdapter.getmCalendar().get(Calendar.YEAR);
-        int month = mCalendarAdapter.getmCalendar().get(Calendar.MONTH) + 1;
+        int year = mCalendarAdapter.getCalendar().get(Calendar.YEAR);
+        int month = mCalendarAdapter.getCalendar().get(Calendar.MONTH) + 1;
         mTitleTextView.setText(year + "년" + month+ "월" );
     }
 }
