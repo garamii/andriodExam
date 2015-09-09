@@ -25,9 +25,18 @@ public class CalendarAdapter extends BaseAdapter {
     private Context mContext;
     private Calendar mCalendar;
 
+    private int mSelectedPosition = -1;
+
+    public int getSelectedPosition() {
+        return mSelectedPosition;
+    }
+
+    public void setSelectedPosition(int mSelectedPosition) {
+        this.mSelectedPosition = mSelectedPosition;
+    }
+
     public CalendarAdapter(Context context) {
         mContext = context;
-
 
         // 오늘
         mCalendar = GregorianCalendar.getInstance();
@@ -36,7 +45,6 @@ public class CalendarAdapter extends BaseAdapter {
 
     private void createCalendar(Calendar calendar) {
         mList = new ArrayList<>();
-
 
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
@@ -48,7 +56,7 @@ public class CalendarAdapter extends BaseAdapter {
         calendar.set(Calendar.DAY_OF_MONTH, 1);
         int firstDay = calendar.get(Calendar.DAY_OF_WEEK);
 
-        //공백
+        // 공백
         for (int i = 1; i < firstDay; i++) {
             mList.add(null);
         }
@@ -60,26 +68,32 @@ public class CalendarAdapter extends BaseAdapter {
         }
     }
 
-    public void prevMonth(){
+    public void prevMonth() {
 
         changeMonth(-1);
     }
-    public void nextMonth(){
+
+    public void nextMonth() {
 
         changeMonth(1);
 
-
     }
-    public Calendar getCalendar(){
+
+    public Calendar getCalendar() {
         return mCalendar;
     }
 
     private void changeMonth(int month) {
+
+        //아이템 선택을 안한 상태로 설정
+
+        mSelectedPosition = -1;
         // 다음달로 설정
         mCalendar.add(Calendar.MONTH, month);
         createCalendar(mCalendar);
 
-        //어댑터에 바뀐 데이터를 반영하도록 알려 줌
+
+        // 어댑터에 바뀐 데이터를 반영하도록 알려 줌
         notifyDataSetChanged();
     }
 
@@ -140,6 +154,13 @@ public class CalendarAdapter extends BaseAdapter {
         } else{
            holder.dateTextView.setText("");
         }
+        //선택 된 셀의 배경 색상 변경
+        if(position == mSelectedPosition){
+            convertView.setBackgroundColor(Color.YELLOW);
+        }else if(position != mSelectedPosition){
+            convertView.setBackgroundColor(Color.WHITE);
+        }
+        
         return convertView;
     }
 
