@@ -28,9 +28,11 @@ import com.example.android.androidexam.Activity.ActivityExamActivity;
 import com.example.android.androidexam.Activity.WebActivity;
 import com.example.android.androidexam.animation.AnimationActivity;
 import com.example.android.androidexam.calendar.CalendarActivity;
+import com.example.android.androidexam.calendar2.Calendar2Activity;
 import com.example.android.androidexam.layout.FrameLayoutActivity;
 import com.example.android.androidexam.mission.Mission02Activity;
 import com.example.android.androidexam.mission.Mission05Activity;
+import com.example.android.androidexam.mission.extra.ListView_Activity;
 import com.example.android.androidexam.mission.mission01Activity;
 import com.example.android.androidexam.mission.mission03Activity;
 
@@ -72,6 +74,8 @@ public class MainActivity extends ListActivity {
          addItem(myData, "미션 05", Mission05Activity.class);
          addItem(myData, "animation 연습", AnimationActivity.class);
          addItem(myData, "달력 연습", CalendarActivity.class);
+         addItem(myData, "달력(android)", Calendar2Activity.class);
+         addItem(myData, "ListView",ListView_Activity.class);
 
         // ----- 메뉴 추가 여기까지
 

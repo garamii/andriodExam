@@ -1,7 +1,9 @@
 
 package com.example.android.androidexam.calendar;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,9 +38,9 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
         // View 에 어댑터를 설정
         mCalendarView = (CalendarView) findViewById(R.id.calendar);
         mCalendarView.setAdapter(mCalendarAdapter);
-
-        // 이벤트 리스너 연결
+        //아이템 클릭 이벤트 연결
         mCalendarView.setOnItemClickListener(this);
+
     }
 
     @Override
@@ -62,13 +64,27 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
     private void updateTitle() {
         int year = mCalendarAdapter.getCalendar().get(Calendar.YEAR);
         int month = mCalendarAdapter.getCalendar().get(Calendar.MONTH) + 1;
-        mTitleTextView.setText(year + "년" + month+ "월" );
+        mTitleTextView.setText(year + "년" + month + "월");
     }
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        mCalendarAdapter.setSelectedPosition(position);
-        //다시 그려달라고 명령
-        mCalendarAdapter.notifyDataSetChanged();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setNegativeButton("닫기",null);
+        builder.setPositiveButton("저장", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        View layout = getLayoutInflater().inflate(R.layout.dialog_schedule,null);
+        //LayoutInflater.from(this).inflate(R.layout.item_calendar, parent,false);
+        builder.setView(layout);
+
+
+        builder.show();
     }
 }

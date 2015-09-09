@@ -25,7 +25,7 @@ public class CalendarAdapter extends BaseAdapter {
     private Context mContext;
     private Calendar mCalendar;
 
-    private int mSelectedPosition = -1;
+        private int mSelectedPosition = -1;
 
     public int getSelectedPosition() {
         return mSelectedPosition;
@@ -44,7 +44,7 @@ public class CalendarAdapter extends BaseAdapter {
     }
 
     private void createCalendar(Calendar calendar) {
-        mList = new ArrayList<>();
+            mList = new ArrayList<>();
 
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
@@ -85,8 +85,7 @@ public class CalendarAdapter extends BaseAdapter {
 
     private void changeMonth(int month) {
 
-        //아이템 선택을 안한 상태로 설정
-
+        //아이템 선택을 안한 상태로
         mSelectedPosition = -1;
         // 다음달로 설정
         mCalendar.add(Calendar.MONTH, month);
@@ -157,7 +156,7 @@ public class CalendarAdapter extends BaseAdapter {
         //선택 된 셀의 배경 색상 변경
         if(position == mSelectedPosition){
             convertView.setBackgroundColor(Color.YELLOW);
-        }else if(position != mSelectedPosition){
+        }else{
             convertView.setBackgroundColor(Color.WHITE);
         }
         

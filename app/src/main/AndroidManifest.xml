@@ -60,6 +60,11 @@
             android:name=".calendar.CalendarActivity"
             android:label="@string/title_activity_calendar" >
         </activity>
+        <activity android:name=".calendar2.Calendar2Activity" />
+        <activity
+            android:name=".mission.extra.ListView_Activity"
+            android:label="@string/title_activity_list_view_" >
+        </activity>
     </application>
 
 </manifest>

@@ -2,6 +2,8 @@ package com.example.android.androidexam.calendar;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 /**
@@ -9,7 +11,7 @@ import android.widget.GridView;
  *
  * 달력이다
  */
-public class CalendarView extends GridView{
+public class CalendarView extends GridView implements AdapterView.OnItemClickListener {
 
     // 코드 상에서 생성 될 때 호출 하는 생성자
     public CalendarView(Context context) {
@@ -32,6 +34,22 @@ public class CalendarView extends GridView{
         setVerticalSpacing(1);
         setHorizontalSpacing(1);
 
+        //아이템 클릭 이벤트
+        setOnItemClickListener(this);
+    }
 
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if(getAdapter() != null) {
+            if(getAdapter() instanceof CalendarAdapter) {
+                CalendarAdapter adapter = (CalendarAdapter) getAdapter();
+                adapter.setSelectedPosition(position);
+                adapter.notifyDataSetChanged();
+            }else {
+               throw new IllegalStateException("CalendatAdapter 를 세팅 해야 합니다");
+            }
+
+        }
     }
 }
