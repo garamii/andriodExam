@@ -97,13 +97,17 @@
 
     </LinearLayout>
 
-    <com.example.android.androidexam.calendar.CalendarView
+    <com.example.android.androidexam.calendar.view.CalendarView
 
         android:id="@+id/calendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ListView
+        android:id="@+id/lv_todo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-        />
+
 
 
 </LinearLayout>

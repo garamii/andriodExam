@@ -65,6 +65,10 @@
             android:name=".mission.extra.ListView_Activity"
             android:label="@string/title_activity_list_view_" >
         </activity>
+        <activity
+            android:name=".exam.ListExamActivity"
+            android:label="@string/title_activity_list_exam" >
+        </activity>
     </application>
 
 </manifest>
