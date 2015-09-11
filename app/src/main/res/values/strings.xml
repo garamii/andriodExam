@@ -15,4 +15,5 @@
     <string name="title_activity_calendar">CalendarActivity</string>
     <string name="title_activity_list_view_">listView_Activity</string>
     <string name="title_activity_list_exam">ListExamActivity</string>
+    <string name="title_activity_thread">ThreadActivity</string>
 </resources>

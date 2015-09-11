@@ -95,7 +95,7 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //선택된 것으로 함
+        //선택된 것 이벤트 실행
         mCalendarAdapter.setSelectedPosition(position);
         mCalendarAdapter.notifyDataSetChanged();
 
@@ -117,14 +117,16 @@ public class CalendarActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
         View layout = getLayoutInflater().inflate(R.layout.dialog_schedule, null);
+
         final TimePicker timePicker = (TimePicker) layout.findViewById(R.id.picker_time);
         final EditText editText = (EditText) layout.findViewById(R.id.et_schedule);
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
         // 롱 클릭 한 곳의 Calendar 객체를 얻음
         final Calendar calendar =(Calendar) mCalendarAdapter.getItem(position);
+
       //  Toast.makeText(CalendarActivity.this,calendar.toString(), Toast.LENGTH_SHORT).show();
 
         builder.setNegativeButton("닫기", null);

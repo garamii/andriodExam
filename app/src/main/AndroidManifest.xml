@@ -69,6 +69,10 @@
             android:name=".exam.ListExamActivity"
             android:label="@string/title_activity_list_exam" >
         </activity>
+        <activity
+            android:name=".thread.ThreadActivity"
+            android:label="@string/title_activity_thread" >
+        </activity>
     </application>
 
 </manifest>
