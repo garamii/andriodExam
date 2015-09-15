@@ -36,6 +36,7 @@ import com.example.android.androidexam.mission.Mission05Activity;
 import com.example.android.androidexam.mission.extra.ListView_Activity;
 import com.example.android.androidexam.mission.mission01Activity;
 import com.example.android.androidexam.mission.mission03Activity;
+import com.example.android.androidexam.parsing.json.WeatherActivity;
 import com.example.android.androidexam.thread.ThreadActivity;
 
 import java.text.Collator;
@@ -80,6 +81,7 @@ public class MainActivity extends ListActivity {
          addItem(myData, "ListView",ListView_Activity.class);
          addItem(myData, "ListView연습",ListExamActivity.class);
          addItem(myData, "Thread 연습",ThreadActivity.class);
+         addItem(myData, "parsing 연습",WeatherActivity.class);
 
         // ----- 메뉴 추가 여기까지
 
