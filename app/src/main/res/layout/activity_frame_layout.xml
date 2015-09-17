@@ -20,11 +20,11 @@
         android:layout_height="match_parent">
 
         <ImageView
-        android:id="@+id/image1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/back4"
-            android:visibility="visible"/>
+            android:id="@+id/image1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/back4"
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/image2"

@@ -9,7 +9,7 @@ import java.net.URLConnection;
 /**
  * Created by student on 2015-09-15.
  */
-public class NetworkUtill {
+public class NetworkUtil {
     /**
      * UrlConnection 객체를 생성한다
      *

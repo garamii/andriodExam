@@ -30,6 +30,8 @@ import com.example.android.androidexam.animation.AnimationActivity;
 import com.example.android.androidexam.calendar.CalendarActivity;
 import com.example.android.androidexam.calendar2.Calendar2Activity;
 import com.example.android.androidexam.exam.ListExamActivity;
+import com.example.android.androidexam.fragment.FragmentActivity;
+import com.example.android.androidexam.graphic.GraphicActivity;
 import com.example.android.androidexam.layout.FrameLayoutActivity;
 import com.example.android.androidexam.mission.Mission02Activity;
 import com.example.android.androidexam.mission.Mission05Activity;
@@ -38,6 +40,7 @@ import com.example.android.androidexam.mission.mission01Activity;
 import com.example.android.androidexam.mission.mission03Activity;
 import com.example.android.androidexam.parsing.json.WeatherActivity;
 import com.example.android.androidexam.thread.ThreadActivity;
+import com.example.android.androidexam.viewpager.ScreenSlideActivity;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -82,6 +85,9 @@ public class MainActivity extends ListActivity {
          addItem(myData, "ListView연습",ListExamActivity.class);
          addItem(myData, "Thread 연습",ThreadActivity.class);
          addItem(myData, "parsing 연습",WeatherActivity.class);
+         addItem(myData, "fragment 연습",FragmentActivity.class);
+         addItem(myData, "Viewpager",ScreenSlideActivity.class);
+         addItem(myData, "Graphic",GraphicActivity.class);
 
         // ----- 메뉴 추가 여기까지
 

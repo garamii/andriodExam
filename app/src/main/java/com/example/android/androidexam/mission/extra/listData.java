@@ -1,8 +1,8 @@
+
 package com.example.android.androidexam.mission.extra;
 
 /**
- * Created by student on 2015-09-09.
- * 으악
+ * Created by student on 2015-09-09. 으악
  */
 
 public class ListData {

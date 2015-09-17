@@ -1,0 +1,21 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:name="com.example.android.androidexam.fragment.ColorFragment">
+
+<fragment
+    class="com.example.android.androidexam.fragment.ColorFragment"
+    android:id="@+id/frag_color"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    tools:layout="@layout/fragment_color" />
+
+    <Button
+        android:id="@+id/btn_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

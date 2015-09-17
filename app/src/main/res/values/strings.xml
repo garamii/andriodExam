@@ -17,4 +17,5 @@
     <string name="title_activity_list_exam">ListExamActivity</string>
     <string name="title_activity_thread">ThreadActivity</string>
     <string name="title_activity_weather">WeatherActivity</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

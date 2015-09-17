@@ -192,15 +192,15 @@ public class ThreadActivity extends AppCompatActivity implements View.OnClickLis
         thread.start();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+        @Override
+        protected void onStart() {
+            super.onStart();
 
-        Log.d(TAG, "onStart");
-    }
+            Log.d(TAG, "onStart");
+        }
 
-    @Override
-    protected void onRestart() {
+        @Override
+        protected void onRestart() {
         super.onRestart();
 
         Log.d(TAG, "onRestart");

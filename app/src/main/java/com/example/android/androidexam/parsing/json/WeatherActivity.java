@@ -1,5 +1,4 @@
 package com.example.android.androidexam.parsing.json;
-
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,7 +10,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 
 import com.example.android.androidexam.R;
-import com.example.android.androidexam.utils.network.NetworkUtill;
+import com.example.android.androidexam.utils.network.NetworkUtil;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,7 +34,6 @@ public class WeatherActivity extends Activity implements View.OnKeyListener {
 
     private ProgressBar mProgressBar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,82 +47,72 @@ public class WeatherActivity extends Activity implements View.OnKeyListener {
 
         mCityEditText.setOnKeyListener(this);
 
-        // Android 4.0 부터 네트워킹 제약
-     new WeatherInfoLoadTask().execute("suwon");
+        new WeatherInfoLoadTask().execute("suwon");
     }
-
 
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_ENTER) {
-           new WeatherInfoLoadTask().execute(mCityEditText.getText().toString());
+            new WeatherInfoLoadTask().execute(mCityEditText.getText().toString());
             return true;
         }
 
         return false;
     }
 
-    class WeatherInfoLoadTask extends AsyncTask<String, Void, Void>{
-
-
+    class WeatherInfoLoadTask extends AsyncTask<String, Void, List> {
         @Override
         protected void onPreExecute() {
-            super.onPreExecute();
 
             mProgressBar.setVisibility(View.VISIBLE);
-
         }
 
         @Override
-        protected Void doInBackground(String... params) {
+        protected List doInBackground(String... params) { // 첫번째 인자
             String query = params[0];
 
-            {
+            List<Weather> weatherList = null;
+            try {
+                // HTTP 에서 내용을 String 으로 받아 온다
+                String jsonString = NetworkUtil.getReturnString(URL_FORECAST + query);
 
-                try {
-                    // HTTP 에서 내용을 String 으로 받아 온다
-                    String jsonString = NetworkUtill.getReturnString(URL_FORECAST + query);
+                // 받아온 JSON String 을 JSON Object로 변환한다
+                JSONObject jsonObject = new JSONObject(jsonString);
+                JSONArray jsonArray = jsonObject.getJSONArray("list");
 
-                    // 받아온 JSON String 을 JSON Object로 변환한다
-                    JSONObject jsonObject = new JSONObject(jsonString);
-                    JSONArray jsonArray = jsonObject.getJSONArray("list");
+                // 날씨 정보 저장할 리스트
+                weatherList = new ArrayList<>();
 
-                    // 날씨 정보 저장할 리스트
-                    List<Weather> weatherList = new ArrayList<>();
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject object = jsonArray.getJSONObject(i);
 
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject object = jsonArray.getJSONObject(i);
+                    String time = object.getString("dt_txt");
+                    time = time.split(" ")[1].substring(0, 5);
+                    String temp = object.getJSONObject("main").getString("temp");
+                    String description = object.getJSONArray("weather")
+                            .getJSONObject(0).getString("description");
 
-                        String time = object.getString("dt_txt");
-                        time = time.split(" ")[1].substring(0, 5);
-                        String temp = object.getJSONObject("main").getString("temp");
-                        String description = object.getJSONArray("weather")
-                                .getJSONObject(0).getString("description");
-
-                        weatherList.add(new Weather(time, temp, description));
-                    }
-
-                    mAdapter = new WeatherAdapter(WeatherActivity.this, weatherList);
-
-                } catch (Exception e) {
-                    Log.e(TAG, e.getMessage());
+                    weatherList.add(new Weather(time, temp, description));
                 }
+
+            } catch (Exception e) {
+                Log.e(TAG, e.getMessage());
             }
 
-            return null;
+            return weatherList;
+        }
+
+        // publishUpdate로만 호출
+        @Override
+        protected void onProgressUpdate(Void... values) { // 두번째 인자
+            super.onProgressUpdate(values);
         }
 
         @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-
+        protected void onPostExecute(List list) { // 세번째 인자
+            mAdapter = new WeatherAdapter(WeatherActivity.this, list);
             mWeatherListView.setAdapter(mAdapter);
             mProgressBar.setVisibility(View.GONE);
         }
-
     }
-
-
-
-
 }
