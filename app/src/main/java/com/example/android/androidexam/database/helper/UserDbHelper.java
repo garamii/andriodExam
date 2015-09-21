@@ -82,4 +82,42 @@ public class UserDbHelper extends SQLiteOpenHelper {
         return c;
     }
 
+    public int update(String email, String newPassword) {
+        SQLiteDatabase db = getReadableDatabase();
+
+        // 패스워드를 변경
+        ContentValues values = new ContentValues();
+        values.put(UserContract.UserEntry.COLUMN_NAME_PASSWORD, newPassword);
+
+        // Email 이 ? 와 같다면
+        String selection = UserContract.UserEntry.COLUMN_NAME_EMAIL + " = ?";
+        // ? 에 들어갈 값을 바인딩
+        String[] selectionArgs = {
+                email
+        };
+
+        int count = db.update(
+                UserContract.UserEntry.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+
+        return count;
+    }
+
+    public boolean delete(String email) {
+
+        SQLiteDatabase db = getReadableDatabase();
+        // db.execSQL("DELETE FROM User WHERE email = '" + email +"' ;");
+
+        // 지울 조건
+        String selection = UserContract.UserEntry.COLUMN_NAME_EMAIL + "='" + email +"'" ;
+
+        // Issue SQL statement.
+      int deleted =  db.delete(UserContract.UserEntry.TABLE_NAME,
+                selection,
+                null);
+
+        return deleted == 1;
+    }
 }

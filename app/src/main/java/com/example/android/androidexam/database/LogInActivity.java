@@ -2,12 +2,15 @@
 package com.example.android.androidexam.database;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.android.androidexam.R;
+import com.example.android.androidexam.database.contract.UserContract;
 import com.example.android.androidexam.database.helper.UserDbHelper;
 
 /**
@@ -15,12 +18,17 @@ import com.example.android.androidexam.database.helper.UserDbHelper;
  */
 public class LogInActivity extends AppCompatActivity implements View.OnClickListener {
     private UserDbHelper mUserDbHelper;
+    private EditText mEmail;
+    private EditText mPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
+
+        mEmail = (EditText) findViewById(R.id.edit_email);
+        mPassword = (EditText) findViewById(R.id.edit_password);
 
         findViewById(R.id.tv_sign_up).setOnClickListener(this);
         findViewById(R.id.btn_login).setOnClickListener(this);
@@ -36,12 +44,27 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.btn_login:
                 // Todo 로그인 처리
-                long insertedId = mUserDbHelper.insert("test", "test", "test");
-                if (insertedId != -1) {
-                    Toast.makeText(LogInActivity.this, "성공", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(LogInActivity.this, "실패", Toast.LENGTH_SHORT).show();
+
+                UserDbHelper helper = new UserDbHelper(this);
+                Cursor cursor = helper.query();
+
+                if (cursor != null) {
+                    cursor.moveToFirst();
+                    while (cursor.moveToNext()) {
+                        String email = cursor.getString(
+                                cursor.getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_EMAIL));
+                        String password = cursor.getString(
+                                cursor.getColumnIndexOrThrow(UserContract.UserEntry.COLUMN_NAME_PASSWORD));
+                        if (email.equals(mEmail.getText().toString())&&
+                                password.equals(mPassword.getText().toString())) {
+                            Toast.makeText(LogInActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                    }
+
                 }
+
+                Toast.makeText(LogInActivity.this, "이메일 또는 패스워드가 틀렸습니다", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

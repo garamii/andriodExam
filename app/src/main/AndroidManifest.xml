@@ -97,6 +97,14 @@
             android:label="@string/title_activity_main" >
         </activity>
 
+        <activity android:name=".database.LogInActivity"
+            android:label="@string/title_activity_main">
+        </activity>
+
+        <activity android:name=".database.SignUpActivity"
+            android:label="@string/title_activity_main">
+        </activity>
+
 
 
         <receiver
