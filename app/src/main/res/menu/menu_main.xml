@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.androidexam.fragment.FragmentActivity">
     <item
+        android:id="@+id/change_color"
+        android:orderInCategory="100"
+        android:title="색깔 변경"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/action_save"
         android:orderInCategory="100"
         android:icon="@mipmap/ic_launcher"
