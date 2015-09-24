@@ -25,6 +25,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.example.android.androidexam.Activity.ActivityExamActivity;
+import com.example.android.androidexam.Activity.ParcelableActivity;
 import com.example.android.androidexam.Activity.WebActivity;
 import com.example.android.androidexam.animation.AnimationActivity;
 import com.example.android.androidexam.calendar.CalendarActivity;
@@ -90,6 +91,7 @@ public class MainActivity extends ListActivity {
          addItem(myData, "Viewpager",ScreenSlideActivity.class);
          addItem(myData, "Graphic",GraphicActivity.class);
          addItem(myData, "Database",LogInActivity.class);
+         addItem(myData, "parcelable",ParcelableActivity.class);
 
         // ----- 메뉴 추가 여기까지
 

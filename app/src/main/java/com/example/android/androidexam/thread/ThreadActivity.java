@@ -303,10 +303,10 @@ public class ThreadActivity extends AppCompatActivity implements View.OnClickLis
         }
 
         @Override
-        protected void onCancelled(Void aVoid) {
-            super.onCancelled(aVoid);
+    protected void onCancelled(Void aVoid) {
+        super.onCancelled(aVoid);
 
-            Log.i(TAG, "Task is cancelled - 2");
-        }
+        Log.i(TAG, "Task is cancelled - 2");
     }
+}
 }

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.androidexam" >
+    package="com.example.android.androidexam">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,100 +21,85 @@
         </activity>
         <activity
             android:name=".layout.FrameLayoutActivity"
-            android:label="@string/title_activity_frame_layout" >
-        </activity>
+            android:label="@string/title_activity_frame_layout"></activity>
         <activity
             android:name=".mission.mission01Activity"
-            android:label="@string/title_activity_mission01" >
-        </activity>
+            android:label="@string/title_activity_mission01"></activity>
         <activity
             android:name=".mission.Mission02Activity"
-            android:label="@string/title_activity_mission02" >
-        </activity>
+            android:label="@string/title_activity_mission02"></activity>
         <activity
             android:name=".mission.mission03Activity"
-            android:label="@string/title_activity_mission03" >
-        </activity>
+            android:label="@string/title_activity_mission03"></activity>
         <activity
             android:name=".mission.LoginPageActivity"
-            android:label="@string/title_activity_loginpage" >
-        </activity>
+            android:label="@string/title_activity_loginpage"></activity>
         <activity
             android:name=".Activity.ActivityExamActivity"
-            android:label="@string/title_activity_activity_exam" >
-        </activity>
+            android:label="@string/title_activity_activity_exam"></activity>
         <activity
             android:name=".Activity.TargetActivity"
-            android:label="@string/title_activity_target" >
-        </activity>
+            android:label="@string/title_activity_target"></activity>
         <activity
             android:name=".Activity.WebActivity"
             android:label="@string/title_activity_web"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".mission.Mission05Activity"
-            android:label="@string/title_activity_mission05" >
-        </activity>
+            android:label="@string/title_activity_mission05"></activity>
         <activity android:name=".animation.AnimationActivity" />
         <activity
             android:name=".calendar.CalendarActivity"
-            android:label="@string/title_activity_calendar" >
-        </activity>
+            android:label="@string/title_activity_calendar"></activity>
         <activity android:name=".calendar2.Calendar2Activity" />
         <activity
             android:name=".mission.extra.ListView_Activity"
-            android:label="@string/title_activity_list_view_" >
-        </activity>
+            android:label="@string/title_activity_list_view_"></activity>
         <activity
             android:name=".exam.ListExamActivity"
-            android:label="@string/title_activity_list_exam" >
-        </activity>
+            android:label="@string/title_activity_list_exam"></activity>
         <activity
             android:name=".thread.ThreadActivity"
-            android:label="@string/title_activity_thread" >
-        </activity>
+            android:label="@string/title_activity_thread"></activity>
         <activity
             android:name=".parsing.json.WeatherActivity"
-            android:label="@string/title_activity_weather" >
-        </activity>
+            android:label="@string/title_activity_weather"></activity>
         <activity
             android:name=".fragment.FragmentActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
+            android:label="@string/title_activity_main"></activity>
         <activity
             android:name=".viewpager.ScreenSlideActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
+            android:label="@string/title_activity_main"></activity>
 
         <activity
             android:name=".receiver.BroadcastActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
+            android:label="@string/title_activity_main"></activity>
 
         <activity
             android:name=".graphic.GraphicActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
+            android:label="@string/title_activity_main"></activity>
 
-        <activity android:name=".database.LogInActivity"
-            android:label="@string/title_activity_main">
-        </activity>
+        <activity
+            android:name=".database.LogInActivity"
+            android:label="@string/title_activity_main"></activity>
 
-        <activity android:name=".database.SignUpActivity"
-            android:label="@string/title_activity_main">
-        </activity>
+        <activity
+            android:name=".database.SignUpActivity"
+            android:label="@string/title_activity_main" />
 
+        <activity
+            android:name=".Activity.ParcelableActivity"
+            android:label="@string/title_activity_main" />
 
 
         <receiver
             android:name=".receiver.MyReceiver"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.ACTION.BATTERY_LOW"/>
-                <action android:name="android.intent.action.AIRPLANE_MODE"/>
-                <action android:name="android.intent.action.MY_BROADCAST"/>
+                <action android:name="android.intent.ACTION.BATTERY_LOW" />
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+                <action android:name="android.intent.action.MY_BROADCAST" />
             </intent-filter>
 
 
