@@ -31,6 +31,7 @@ import com.example.android.androidexam.animation.AnimationActivity;
 import com.example.android.androidexam.calendar.CalendarActivity;
 import com.example.android.androidexam.calendar2.Calendar2Activity;
 import com.example.android.androidexam.database.LogInActivity;
+import com.example.android.androidexam.database.ParseLogInActivity;
 import com.example.android.androidexam.exam.ListExamActivity;
 import com.example.android.androidexam.fragment.FragmentActivity;
 import com.example.android.androidexam.graphic.GraphicActivity;
@@ -92,6 +93,7 @@ public class MainActivity extends ListActivity {
          addItem(myData, "Graphic",GraphicActivity.class);
          addItem(myData, "Database",LogInActivity.class);
          addItem(myData, "parcelable",ParcelableActivity.class);
+         addItem(myData, "Database-parse",ParseLogInActivity.class);
 
         // ----- 메뉴 추가 여기까지
 
