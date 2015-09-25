@@ -4,6 +4,25 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+
+
+    <!--
+      IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
+      to match your app's package name + ".permission.C2D_MESSAGE".
+    -->
+
+    <permissionx
+        android:name="com.example.android.androidexam.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.example.android.androidexam.permission.C2D_MESSAGE" />
+
 
     <application
         android:name=".ParseApplication"
@@ -14,86 +33,93 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
         <activity
             android:name=".layout.FrameLayoutActivity"
-            android:label="@string/title_activity_frame_layout"/>
+            android:label="@string/title_activity_frame_layout" />
         <activity
             android:name=".mission.mission01Activity"
-            android:label="@string/title_activity_mission01"/>
+            android:label="@string/title_activity_mission01" />
         <activity
             android:name=".mission.Mission02Activity"
-            android:label="@string/title_activity_mission02"/>
+            android:label="@string/title_activity_mission02" />
         <activity
             android:name=".mission.mission03Activity"
-            android:label="@string/title_activity_mission03"/>
+            android:label="@string/title_activity_mission03" />
         <activity
             android:name=".mission.LoginPageActivity"
-            android:label="@string/title_activity_loginpage"/>
+            android:label="@string/title_activity_loginpage" />
         <activity
             android:name=".Activity.ActivityExamActivity"
-            android:label="@string/title_activity_activity_exam"/>
+            android:label="@string/title_activity_activity_exam" />
         <activity
             android:name=".Activity.TargetActivity"
-            android:label="@string/title_activity_target"/>
+            android:label="@string/title_activity_target" />
         <activity
             android:name=".Activity.WebActivity"
             android:label="@string/title_activity_web"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".mission.Mission05Activity"
-            android:label="@string/title_activity_mission05"/>
+            android:label="@string/title_activity_mission05" />
         <activity android:name=".animation.AnimationActivity" />
         <activity
             android:name=".calendar.CalendarActivity"
-            android:label="@string/title_activity_calendar"/>
+            android:label="@string/title_activity_calendar" />
         <activity android:name=".calendar2.Calendar2Activity" />
         <activity
             android:name=".mission.extra.ListView_Activity"
-            android:label="@string/title_activity_list_view_"/>
+            android:label="@string/title_activity_list_view_" />
         <activity
             android:name=".exam.ListExamActivity"
-            android:label="@string/title_activity_list_exam"/>
+            android:label="@string/title_activity_list_exam" />
         <activity
             android:name=".thread.ThreadActivity"
-            android:label="@string/title_activity_thread"/>
+            android:label="@string/title_activity_thread" />
         <activity
             android:name=".parsing.json.WeatherActivity"
-            android:label="@string/title_activity_weather"/>
+            android:label="@string/title_activity_weather" />
         <activity
             android:name=".fragment.FragmentActivity"
-            android:label="@string/title_activity_main"/>
+            android:label="@string/title_activity_main" />
         <activity
             android:name=".viewpager.ScreenSlideActivity"
-            android:label="@string/title_activity_main"/>
+            android:label="@string/title_activity_main" />
 
         <activity
             android:name=".receiver.BroadcastActivity"
-            android:label="@string/title_activity_main"/>
+            android:label="@string/title_activity_main" />
 
         <activity
             android:name=".graphic.GraphicActivity"
-            android:label="@string/title_activity_main"/>
+            android:label="@string/title_activity_main" />
 
         <activity
             android:name=".database.LogInActivity"
-            android:label="@string/title_activity_main"/>
+            android:label="@string/title_activity_main" />
 
         <activity
             android:name=".database.SignUpActivity"
             android:label="@string/title_activity_main" />
 
-        <activity
-            android:name=".Activity.ParcelableActivity"
-            android:label="@string/title_activity_main" />
+        <activity android:name=".Activity.ParcelableActivity" android:label="@string/title_activity_main" />
 
+        <activity android:name=".database.parse.ParseLogInActivity" android:label="@string/title_activity_main" />
         <activity
-            android:name=".database.ParseLogInActivity"
+            android:name=".database.parse.ParseLocalDatabaseActivity"
+            android:label="@string/title_activity_main" />
+        <activity
+            android:name=".provider.ContactLoaderActivity"
+            android:label="@string/title_activity_main" />
+        <activity
+            android:name=".provider.LoadPictureActivity"
             android:label="@string/title_activity_main" />
 
 
@@ -106,9 +132,34 @@
                 <action android:name="android.intent.action.AIRPLANE_MODE" />
                 <action android:name="android.intent.action.MY_BROADCAST" />
             </intent-filter>
-
-
         </receiver>
+
+        <!-- parse.com Push 서비스 사용을 위한 부분-->
+        <service android:name="com.parse.PushService" />
+
+        <receiver
+            android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!--
+                  IMPORTANT: Change "com.parse.starter" to match your app's package name.
+                -->
+                <category android:name="com.example.android.androidexam" />
+            </intent-filter>
+        </receiver>
+        <!-- parse.com Push 서비스 사용을 위한 부분. 끝-->
     </application>
 
 </manifest>

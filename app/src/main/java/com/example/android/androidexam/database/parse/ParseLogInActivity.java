@@ -1,5 +1,5 @@
 
-package com.example.android.androidexam.database;
+package com.example.android.androidexam.database.parse;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.android.androidexam.R;
+import com.example.android.androidexam.database.SignUpActivity;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -57,6 +58,8 @@ public class ParseLogInActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
             case R.id.tv_sign_up:
                 startActivity(new Intent(this, SignUpActivity.class));
+
+
                 break;
             case R.id.btn_login:
 

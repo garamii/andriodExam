@@ -31,7 +31,8 @@ import com.example.android.androidexam.animation.AnimationActivity;
 import com.example.android.androidexam.calendar.CalendarActivity;
 import com.example.android.androidexam.calendar2.Calendar2Activity;
 import com.example.android.androidexam.database.LogInActivity;
-import com.example.android.androidexam.database.ParseLogInActivity;
+import com.example.android.androidexam.database.parse.ParseLocalDatabaseActivity;
+import com.example.android.androidexam.database.parse.ParseLogInActivity;
 import com.example.android.androidexam.exam.ListExamActivity;
 import com.example.android.androidexam.fragment.FragmentActivity;
 import com.example.android.androidexam.graphic.GraphicActivity;
@@ -42,12 +43,13 @@ import com.example.android.androidexam.mission.extra.ListView_Activity;
 import com.example.android.androidexam.mission.mission01Activity;
 import com.example.android.androidexam.mission.mission03Activity;
 import com.example.android.androidexam.parsing.json.WeatherActivity;
+import com.example.android.androidexam.provider.ContactLoaderActivity;
+import com.example.android.androidexam.provider.LoadPictureActivity;
 import com.example.android.androidexam.thread.ThreadActivity;
 import com.example.android.androidexam.viewpager.ScreenSlideActivity;
 
 import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -94,11 +96,14 @@ public class MainActivity extends ListActivity {
          addItem(myData, "Database",LogInActivity.class);
          addItem(myData, "parcelable",ParcelableActivity.class);
          addItem(myData, "Database-parse",ParseLogInActivity.class);
+         addItem(myData, "parse 로컬 db",ParseLocalDatabaseActivity.class);
+         addItem(myData, "Content provider,Loader - 연락처",ContactLoaderActivity.class);
+         addItem(myData, "Content provider Loader - 사진",LoadPictureActivity.class);
 
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
-        Collections.sort(myData, sDisplayNameComparator);
+     //   Collections.sort(myData, sDisplayNameComparator);
 
         return myData;
     }
