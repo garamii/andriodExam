@@ -116,6 +116,9 @@
         <activity
             android:name=".provider.LoadPictureActivity"
             android:label="@string/title_activity_main" />
+        <activity
+            android:name=".musicplayer.MusicActivity"
+            android:label="@string/title_activity_main" />
 
         <receiver
             android:name=".receiver.MyReceiver"

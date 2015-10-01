@@ -42,6 +42,7 @@ import com.example.android.androidexam.mission.Mission05Activity;
 import com.example.android.androidexam.mission.extra.ListView_Activity;
 import com.example.android.androidexam.mission.mission01Activity;
 import com.example.android.androidexam.mission.mission03Activity;
+import com.example.android.androidexam.musicplayer.MusicActivity;
 import com.example.android.androidexam.parsing.json.WeatherActivity;
 import com.example.android.androidexam.provider.ContactLoaderActivity;
 import com.example.android.androidexam.provider.LoadPictureActivity;
@@ -99,7 +100,7 @@ public class MainActivity extends ListActivity {
          addItem(myData, "parse 로컬 db",ParseLocalDatabaseActivity.class);
          addItem(myData, "Content provider,Loader - 연락처",ContactLoaderActivity.class);
          addItem(myData, "Content provider Loader - 사진",LoadPictureActivity.class);
-
+        addItem(myData,"music Player", MusicActivity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
