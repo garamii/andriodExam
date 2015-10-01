@@ -19,12 +19,12 @@ import java.util.Random;
  *
  * 생성시 랜덤한 색깔이 적용되는 fragment
  */
-public class ColorFragment extends Fragment {
+        public class ColorFragment extends Fragment {
 
-    private ImageView mImageView;
+            private ImageView mImageView;
 
-    private List<String> list;
-    public ColorFragment() {
+            private List<String> list;
+            public ColorFragment() {
     }
 
     // View 를 만드는 곳

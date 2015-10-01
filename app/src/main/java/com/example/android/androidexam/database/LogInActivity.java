@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.example.android.androidexam.R;
 import com.example.android.androidexam.database.contract.UserContract;
 import com.example.android.androidexam.database.helper.UserDbHelper;
+import com.example.android.androidexam.database.provider.UserProvider;
+
 
 /**
  * Created by junsuk on 15. 9. 18.. DB 연습 - 로그인 Activity
@@ -62,8 +64,14 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btn_login:
                 // Todo 로그인 처리
 
-                UserDbHelper helper = new UserDbHelper(this);
-                Cursor cursor = helper.query();
+                //                UserDbHelper helper = new UserDbHelper(this);
+//                Cursor cursor = helper.query();
+
+                Cursor cursor = getContentResolver().query(UserProvider.CONTENT_URI,
+                        null,
+                        null,
+                        null,
+                        null);
 
                 if (cursor != null) {
                     cursor.moveToFirst();

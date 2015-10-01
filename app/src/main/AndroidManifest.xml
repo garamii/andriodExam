@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.androidexam">
+    package="com.example.android.androidexam" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -9,9 +9,8 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <!--
       IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
@@ -21,24 +20,22 @@
     <permissionx
         android:name="com.example.android.androidexam.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="com.example.android.androidexam.permission.C2D_MESSAGE" />
 
+    <uses-permission android:name="com.example.android.androidexam.permission.C2D_MESSAGE" />
 
     <application
         android:name=".ParseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
-
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
         <activity
@@ -92,26 +89,24 @@
         <activity
             android:name=".viewpager.ScreenSlideActivity"
             android:label="@string/title_activity_main" />
-
         <activity
             android:name=".receiver.BroadcastActivity"
             android:label="@string/title_activity_main" />
-
         <activity
             android:name=".graphic.GraphicActivity"
             android:label="@string/title_activity_main" />
-
         <activity
             android:name=".database.LogInActivity"
             android:label="@string/title_activity_main" />
-
         <activity
             android:name=".database.SignUpActivity"
             android:label="@string/title_activity_main" />
-
-        <activity android:name=".Activity.ParcelableActivity" android:label="@string/title_activity_main" />
-
-        <activity android:name=".database.parse.ParseLogInActivity" android:label="@string/title_activity_main" />
+        <activity
+            android:name=".Activity.ParcelableActivity"
+            android:label="@string/title_activity_main" />
+        <activity
+            android:name=".database.parse.ParseLogInActivity"
+            android:label="@string/title_activity_main" />
         <activity
             android:name=".database.parse.ParseLocalDatabaseActivity"
             android:label="@string/title_activity_main" />
@@ -122,11 +117,10 @@
             android:name=".provider.LoadPictureActivity"
             android:label="@string/title_activity_main" />
 
-
         <receiver
             android:name=".receiver.MyReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.ACTION.BATTERY_LOW" />
                 <action android:name="android.intent.action.AIRPLANE_MODE" />
@@ -134,12 +128,12 @@
             </intent-filter>
         </receiver>
 
-        <!-- parse.com Push 서비스 사용을 위한 부분-->
+        <!-- parse.com Push 서비스 사용을 위한 부분 -->
         <service android:name="com.parse.PushService" />
 
         <receiver
             android:name="com.parse.ParsePushBroadcastReceiver"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
                 <action android:name="com.parse.push.intent.RECEIVE" />
                 <action android:name="com.parse.push.intent.DELETE" />
@@ -148,18 +142,23 @@
         </receiver>
         <receiver
             android:name="com.parse.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+            android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <!--
-                  IMPORTANT: Change "com.parse.starter" to match your app's package name.
-                -->
+<!--                   IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
                 <category android:name="com.example.android.androidexam" />
             </intent-filter>
         </receiver>
-        <!-- parse.com Push 서비스 사용을 위한 부분. 끝-->
+        <!-- parse.com Push 서비스 사용을 위한 부분. 끝 -->
+
+        <provider
+            android:name=".database.provider.UserProvider"
+            android:authorities="com.example.android.androidexam.provider"
+            android:enabled="true"
+            android:exported="true" >
+        </provider>
     </application>
 
 </manifest>
